@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conceptos de Desarrollo Web</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .contenedor {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .pregunta {
+            font-weight: bold;
+            color: #007bff;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .respuesta {
+            display: none;
+            margin-left: 10px;
+            padding: 5px;
+            border-left: 3px solid #007bff;
+        }
+        .btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h1>Conceptos de Desarrollo Web</h1>
+
+        <div class="pregunta" onclick="toggleRespuesta(1)">1. ¿Qué es HTML y cuál es su función principal en el desarrollo web?</div>
+        <div class="respuesta" id="resp1">Lenguaje de marcado de hipertexto, sirve para realizar la base de las páginas web, sin el diseño (para eso es el CSS).</div>
+
+        <div class="pregunta" onclick="toggleRespuesta(2)">2. ¿Qué son las etiquetas HTML y cómo se utilizan?</div>
+        <div class="respuesta" id="resp2">Las etiquetas HTML distinguen cada elemento, por ejemplo:<br>
+            <strong>&lt;H1&gt;</strong> para títulos, <strong>&lt;body&gt;</strong> para el contenido de la página, <strong>&lt;a&gt;</strong> para enlaces.</div>
+
+        <div class="pregunta" onclick="toggleRespuesta(3)">3. Proporciona ejemplos de algunas de las etiquetas HTML más comunes.</div>
+        <div class="respuesta" id="resp3"><strong>&lt;br&gt;</strong> para saltos de línea, <strong>&lt;p&gt;</strong> para párrafos, <strong>&lt;img&gt;</strong> para imágenes.</div>
+
+        <div class="pregunta" onclick="toggleRespuesta(4)">4. ¿Qué es CSS y cómo se utiliza para dar estilo a una página web?</div>
+        <div class="respuesta" id="resp4">Es un lenguaje usado para diseñar el aspecto visual de una página web.</div>
+
+        <div class="pregunta" onclick="toggleRespuesta(5)">5. ¿Cuáles son las propiedades más importantes de CSS?</div>
+        <div class="respuesta" id="resp5">
+            <strong>background-color:</strong> Color de fondo.<br>
+            <strong>background-image:</strong> Imagen de fondo.<br>
+            <strong>margin:</strong> Espaciado externo.<br>
+            <strong>padding:</strong> Espaciado interno.
+        </div>
+
+        <div class="pregunta" onclick="toggleRespuesta(6)">6. Explica el modelo de caja (box model) en CSS.</div>
+        <div class="respuesta" id="resp6">El box model estructura los elementos de una página como cajas con contenido, padding, border y margin.</div>
+
+        <div class="pregunta" onclick="toggleRespuesta(7)">7. ¿Qué es el diseño responsivo y cómo se logra con CSS?</div>
+        <div class="respuesta" id="resp7">Es un diseño adaptable a distintos tamaños de pantalla, logrado con flexbox o media queries.</div>
+
+        <div class="pregunta" onclick="toggleRespuesta(8)">8. ¿Qué es JavaScript y cómo se integra en el desarrollo web?</div>
+        <div class="respuesta" id="resp8">Es un lenguaje que agrega interactividad a las páginas web. Se integra con la etiqueta <strong>&lt;script&gt;</strong>.</div>
+
+        <div class="pregunta" onclick="toggleRespuesta(9)">9. Explica cómo JavaScript interactúa con el HTML y CSS a través del DOM.</div>
+        <div class="respuesta" id="resp9">El DOM representa la estructura del documento HTML en forma de árbol, permitiendo modificar elementos en tiempo real.</div>
+
+        <div class="pregunta" onclick="toggleRespuesta(10)">10. Proporciona ejemplos de cómo JavaScript puede hacer que una página web sea interactiva.</div>
+        <div class="respuesta" id="resp10">
+            <strong>alert("¡Bienvenido!");</strong> Muestra una alerta.<br>
+            <button class="btn" id="alertaBtn">Mostrar Alerta</button>
+            <p id="texto">Haz clic en el botón para cambiar este texto.</p>
+            <button class="btn" id="boton">Este botón es :v</button>
+        </div>
+
+        <div class="pregunta" onclick="toggleRespuesta(11)">11. ¿Qué es Git y por qué es importante para el desarrollo web?</div>
+        <div class="respuesta" id="resp11">Es un sistema de control de versiones que ayuda a guardar y rastrear cambios en el código.</div>
+
+        <div class="pregunta" onclick="toggleRespuesta(12)">12. Explica cómo Git se usa para el control de versiones en proyectos de desarrollo web.</div>
+        <div class="respuesta" id="resp12">Git permite volver a versiones anteriores del código. Con <strong>git log</strong> se puede ver el historial de cambios.</div>
+
+        <div class="pregunta" onclick="toggleRespuesta(13)">13. ¿Qué es GitHub y cómo facilita la colaboración en proyectos web?</div>
+        <div class="respuesta" id="resp13">GitHub es una plataforma en la nube para almacenar proyectos Git y trabajar en equipo.</div>
+    </div>
+
+    <script>
+        function toggleRespuesta(num) {
+            let respuesta = document.getElementById("resp" + num);
+            respuesta.style.display = (respuesta.style.display === "block") ? "none" : "block";
+        }
+
+        document.getElementById("boton").addEventListener("click", function() {
+            document.getElementById("texto").innerText = "Hola jaja";
+        });
+
+        document.getElementById("alertaBtn").addEventListener("click", function() {
+            alert("hola jaja");
+        });
+    </script>
+
+</body>
+</html>
